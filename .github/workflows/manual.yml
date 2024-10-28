@@ -33,7 +33,7 @@ jobs:
         setup-python: false
     - name: Install dependencies
       run: |
-        pip3 -v install --config-settings --confirm-license= PyQt6
+        pip3 -v install --config-settings --confirm-license= --config-settings --qmake=qmake PyQt6
         pip3 install pyinstaller
     - name: Build with pyinstaller
       run: |
