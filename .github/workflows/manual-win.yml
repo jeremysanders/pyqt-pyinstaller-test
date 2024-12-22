@@ -27,7 +27,7 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
     - name: Install Qt
-      uses: jurplel/install-qt-action@v3
+      uses: jurplel/install-qt-action@v4
       with:
         cache: 'true'
         cache-key-prefix: 'qt-cache-win'
@@ -35,7 +35,7 @@ jobs:
         setup-python: false
     - name: Install dependencies
       run: |
-        pip3 -v install --config-settings --confirm-license= --no-binary :all: PyQt6
+        pip3 -v install --config-settings --confirm-license= --config-settings --verbose= --no-binary :all: PyQt6
         pip3 install pyinstaller
     - name: Build with pyinstaller
       run: |
