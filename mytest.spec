@@ -40,5 +40,5 @@ coll = COLLECT(
     strip=False,
     upx=False,
     upx_exclude=[],
-    name='mytest2',
+    name='mytest',
 )
