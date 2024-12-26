@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manual workflow for Mac OS
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -12,7 +12,7 @@ jobs:
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
-    runs-on: 'ubuntu-20.04'
+    runs-on: 'macos-13'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,12 +28,12 @@ jobs:
       uses: jurplel/install-qt-action@v4
       with:
         cache: 'true'
-        cache-key-prefix: 'qt-cache-lin-v2'
+        cache-key-prefix: 'qt-cache-macos'
         version: '6.7.3'
         setup-python: false
     - name: Install dependencies
       run: |
-        pip3 -v install --config-settings --confirm-license= --no-binary :all: PyQt6
+        pip3 -v install --config-settings --confirm-license= --config-settings --verbose= --no-binary :all: PyQt6
         pip3 install pyinstaller
     - name: Build with pyinstaller
       run: |
